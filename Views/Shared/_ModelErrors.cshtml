@@ -1,0 +1,12 @@
+@* Hien thi loi cap model (key rong), vd: loi database *@
+@if (ViewData.ModelState.TryGetValue(string.Empty, out var modelLevelEntry) && modelLevelEntry!.Errors.Count > 0)
+{
+    <div class="alert alert-danger">
+        <ul class="mb-0">
+            @foreach (var error in modelLevelEntry.Errors)
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+}

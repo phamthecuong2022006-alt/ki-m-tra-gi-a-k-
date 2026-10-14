@@ -1,0 +1,146 @@
+@model DishIndexViewModel
+@{
+    ViewData["Title"] = L["DishList"].Value;
+    var allErrors = ViewData.ModelState.Values.SelectMany(v => v.Errors).ToList();
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1 class="h3 mb-0">@L["DishList"]</h1>
+<a class="btn btn-danger" asp-action="Create">@L["CreateDish"]</a></div>
+
+<form method="get" asp-action="Index" class="card card-body mb-3">
+    @if (allErrors.Count > 0)
+    {
+        <div class="alert alert-danger">
+            <ul class="mb-0">
+                @foreach (var error in allErrors)
+                {
+                    <li>@error.ErrorMessage</li>
+                }
+            </ul>
+        </div>
+    }
+
+    <div class="row g-2">
+        <div class="col-md-4">
+            <label class="form-label" for="Search">@L["SearchLabel"]</label>
+            <input asp-for="Search" class="form-control" placeholder="@L["SearchPlaceholder"]" />
+        </div>
+        <div class="col-md-4">
+            <label class="form-label" for="CategoryId">@L["Category"]</label>
+            <select asp-for="CategoryId" class="form-select">
+                <option value="">@L["AllCategories"]</option>
+                @foreach (var c in Model.Categories)
+                {
+                    <option value="@c.Id">@c.Name</option>
+                }
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label class="form-label" for="Status">@L["Status"]</label>
+            <select asp-for="Status" class="form-select">
+                <option value="">@L["AllStatuses"]</option>
+                <option value="available">@L["StatusAvailable"]</option>
+                <option value="unavailable">@L["StatusUnavailable"]</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label class="form-label" for="MinPrice">@L["MinPrice"]</label>
+            <input asp-for="MinPrice" type="number" step="any" class="form-control" />
+        </div>
+        <div class="col-md-3">
+            <label class="form-label" for="MaxPrice">@L["MaxPrice"]</label>
+            <input asp-for="MaxPrice" type="number" step="any" class="form-control" />
+        </div>
+        <div class="col-md-4">
+            <label class="form-label" for="Sort">@L["SortBy"]</label>
+            <select asp-for="Sort" class="form-select">
+                <option value="">@L["SortDefault"]</option>
+                <option value="price_asc">@L["SortPriceAsc"]</option>
+                <option value="price_desc">@L["SortPriceDesc"]</option>
+                <option value="time_asc">@L["SortTimeAsc"]</option>
+            </select>
+        </div>
+        <div class="col-md-2 d-flex align-items-end gap-2">
+            <button type="submit" class="btn btn-primary">@L["Filter"]</button>
+            <a class="btn btn-outline-secondary" asp-action="Index">@L["Reset"]</a>
+        </div>
+    </div>
+</form>
+
+@if (!Model.Dishes.Any())
+{
+    <div class="alert alert-info">@L["NoResults"]</div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-hover align-middle">
+            <thead>
+                <tr>
+                    <th>@L["Image"]</th>
+                    <th>@L["Name"]</th>
+                    <th>@L["Category"]</th>
+                    <th class="text-end">@L["Price"]</th>
+                    <th>@L["PreparationTime"]</th>
+                    <th>@L["PrepClass"]</th>
+                    <th>@L["Status"]</th>
+                    <th>@L["Actions"]</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var d in Model.Dishes)
+                {
+                    var thumb = d.Thumbnail;
+                    <tr class="@(d.IsAvailable ? "" : "table-secondary")">
+                        <td>
+                            @if (thumb != null)
+                            {
+                                <img class="thumb" src="@thumb.ImageUrl" alt="@d.Name" />
+                            }
+                            else
+                            {
+                                <div class="thumb img-placeholder">@L["NoImage"]</div>
+                            }
+                        </td>
+                        <td>
+                            <a asp-action="Detail" asp-route-id="@d.Id" class="fw-semibold text-decoration-none">@d.Name</a>
+                        </td>
+                        <td>@d.DishCategory?.Name</td>
+                        <td class="text-end">@d.Price.ToString("N0", CultureInfo.CurrentUICulture) ₫</td>
+                        <td>@d.PreparationTime @L["Minutes"]</td>
+                        <td>
+                            @* Chuc nang 3: tinh phan loai luc hien thi, khong luu vao database *@
+                            @if (d.PreparationTime <= 15)
+                            {
+                                <span class="badge text-bg-info">@L["Quick"]</span>
+                            }
+                            else
+                            {
+                                <span class="badge text-bg-warning">@L["Regular"]</span>
+                            }
+                        </td>
+                        <td>
+                            @if (d.IsAvailable)
+                            {
+                                <span class="badge text-bg-success">@L["StatusAvailable"]</span>
+                            }
+                            else
+                            {
+                                <span class="badge text-bg-secondary">@L["StatusUnavailable"]</span>
+                            }
+                        </td>
+                        <td class="text-nowrap">
+                            <a class="btn btn-sm btn-outline-primary" asp-action="Detail" asp-route-id="@d.Id">@L["Detail"]</a>
+                            <a class="btn btn-sm btn-outline-secondary" asp-action="Edit" asp-route-id="@d.Id">@L["Edit"]</a>
+                            <form asp-action="Delete" asp-route-id="@d.Id" method="post" class="d-inline"
+                                  data-confirm="@L["ConfirmDelete"]">
+                                <button type="submit" class="btn btn-sm btn-outline-danger">@L["Delete"]</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

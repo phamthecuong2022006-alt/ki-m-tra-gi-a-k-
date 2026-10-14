@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AppTitle" xml:space="preserve">
+    <value>Quản lý món ăn</value>
+  </data>
+  <data name="NavDishes" xml:space="preserve">
+    <value>Món ăn</value>
+  </data>
+  <data name="NavCategories" xml:space="preserve">
+    <value>Loại món ăn</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Ngôn ngữ</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Thêm mới</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Sửa</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>Chi tiết</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Lưu</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Hủy</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>Quay lại danh sách</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>Thao tác</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>Bạn có chắc chắn muốn xóa mục này?</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Lọc</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Đặt lại</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Tên</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Giá</value>
+  </data>
+  <data name="PreparationTime" xml:space="preserve">
+    <value>Thời gian chế biến (phút)</value>
+  </data>
+  <data name="IsAvailable" xml:space="preserve">
+    <value>Đang bán</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Loại món ăn</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Trạng thái</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>Ảnh</value>
+  </data>
+  <data name="PrepClass" xml:space="preserve">
+    <value>Phân loại thời gian</value>
+  </data>
+  <data name="ImageUrl" xml:space="preserve">
+    <value>Đường dẫn ảnh</value>
+  </data>
+  <data name="IsThumbnail" xml:space="preserve">
+    <value>Dùng làm ảnh đại diện</value>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>phút</value>
+  </data>
+  <data name="SearchLabel" xml:space="preserve">
+    <value>Tìm theo tên món</value>
+  </data>
+  <data name="SearchPlaceholder" xml:space="preserve">
+    <value>Một phần tên món...</value>
+  </data>
+  <data name="AllCategories" xml:space="preserve">
+    <value>Tất cả loại món</value>
+  </data>
+  <data name="AllStatuses" xml:space="preserve">
+    <value>Tất cả trạng thái</value>
+  </data>
+  <data name="StatusAvailable" xml:space="preserve">
+    <value>Đang bán</value>
+  </data>
+  <data name="StatusUnavailable" xml:space="preserve">
+    <value>Ngừng bán</value>
+  </data>
+  <data name="MinPrice" xml:space="preserve">
+    <value>Giá từ</value>
+  </data>
+  <data name="MaxPrice" xml:space="preserve">
+    <value>Giá đến</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>Sắp xếp theo</value>
+  </data>
+  <data name="SortDefault" xml:space="preserve">
+    <value>Mặc định</value>
+  </data>
+  <data name="SortPriceAsc" xml:space="preserve">
+    <value>Giá: thấp đến cao</value>
+  </data>
+  <data name="SortPriceDesc" xml:space="preserve">
+    <value>Giá: cao đến thấp</value>
+  </data>
+  <data name="SortTimeAsc" xml:space="preserve">
+    <value>Thời gian chế biến: ngắn đến dài</value>
+  </data>
+  <data name="NoResults" xml:space="preserve">
+    <value>Không tìm thấy món ăn nào.</value>
+  </data>
+  <data name="NoImage" xml:space="preserve">
+    <value>Chưa có ảnh</value>
+  </data>
+  <data name="Quick" xml:space="preserve">
+    <value>Nhanh</value>
+  </data>
+  <data name="Regular" xml:space="preserve">
+    <value>Thông thường</value>
+  </data>
+  <data name="DishList" xml:space="preserve">
+    <value>Danh sách món ăn</value>
+  </data>
+  <data name="CreateDish" xml:space="preserve">
+    <value>Thêm món ăn</value>
+  </data>
+  <data name="CreateDishTitle" xml:space="preserve">
+    <value>Thêm món ăn mới</value>
+  </data>
+  <data name="EditDishTitle" xml:space="preserve">
+    <value>Sửa món ăn</value>
+  </data>
+  <data name="CategoryList" xml:space="preserve">
+    <value>Danh sách loại món ăn</value>
+  </data>
+  <data name="CreateCategory" xml:space="preserve">
+    <value>Thêm loại món ăn</value>
+  </data>
+  <data name="EditCategory" xml:space="preserve">
+    <value>Sửa loại món ăn</value>
+  </data>
+  <data name="DishCount" xml:space="preserve">
+    <value>Số món</value>
+  </data>
+  <data name="SelectCategory" xml:space="preserve">
+    <value>-- Chọn loại món ăn --</value>
+  </data>
+  <data name="NoCategoriesWarning" xml:space="preserve">
+    <value>Chưa có loại món ăn nào. Vui lòng tạo loại món ăn trước.</value>
+  </data>
+  <data name="Images" xml:space="preserve">
+    <value>Hình ảnh</value>
+  </data>
+  <data name="AddImage" xml:space="preserve">
+    <value>Thêm ảnh</value>
+  </data>
+  <data name="SetThumbnail" xml:space="preserve">
+    <value>Đặt làm ảnh đại diện</value>
+  </data>
+  <data name="CurrentThumbnail" xml:space="preserve">
+    <value>Ảnh đại diện</value>
+  </data>
+  <data name="DeleteImage" xml:space="preserve">
+    <value>Xóa ảnh</value>
+  </data>
+  <data name="NoImagesYet" xml:space="preserve">
+    <value>Món ăn này chưa có ảnh.</value>
+  </data>
+  <data name="SavedSuccess" xml:space="preserve">
+    <value>Lưu thành công.</value>
+  </data>
+  <data name="DeletedSuccess" xml:space="preserve">
+    <value>Xóa thành công.</value>
+  </data>
+  <data name="ImageAdded" xml:space="preserve">
+    <value>Đã thêm ảnh.</value>
+  </data>
+  <data name="ThumbnailChanged" xml:space="preserve">
+    <value>Đã đổi ảnh đại diện.</value>
+  </data>
+  <data name="ImageDeleted" xml:space="preserve">
+    <value>Đã xóa ảnh.</value>
+  </data>
+  <data name="NameRequired" xml:space="preserve">
+    <value>Tên không được để trống.</value>
+  </data>
+  <data name="PriceInvalid" xml:space="preserve">
+    <value>Giá phải lớn hơn 0.</value>
+  </data>
+  <data name="PrepInvalid" xml:space="preserve">
+    <value>Thời gian chế biến phải lớn hơn 0.</value>
+  </data>
+  <data name="CategoryRequired" xml:space="preserve">
+    <value>Vui lòng chọn loại món ăn.</value>
+  </data>
+  <data name="CategoryNotFound" xml:space="preserve">
+    <value>Loại món ăn đã chọn không tồn tại.</value>
+  </data>
+  <data name="DishNameDuplicate" xml:space="preserve">
+    <value>Tên món ăn đã tồn tại trong loại món ăn này.</value>
+  </data>
+  <data name="TextTooLong" xml:space="preserve">
+    <value>Quá dài: tối đa {1} ký tự.</value>
+  </data>
+  <data name="ImageUrlRequired" xml:space="preserve">
+    <value>Đường dẫn ảnh không được để trống.</value>
+  </data>
+  <data name="ImageUrlInvalid" xml:space="preserve">
+    <value>Đường dẫn ảnh phải là địa chỉ http(s) hợp lệ (tối đa 500 ký tự).</value>
+  </data>
+  <data name="ValueRequired" xml:space="preserve">
+    <value>Vui lòng nhập giá trị.</value>
+  </data>
+  <data name="ValueNotNumber" xml:space="preserve">
+    <value>Giá trị '{0}' phải là một số.</value>
+  </data>
+  <data name="ValueInvalid" xml:space="preserve">
+    <value>Giá trị '{0}' không hợp lệ.</value>
+  </data>
+  <data name="CategoryInUse" xml:space="preserve">
+    <value>Không thể xóa loại món ăn này vì vẫn còn món ăn đang sử dụng.</value>
+  </data>
+  <data name="PriceRangeInvalid" xml:space="preserve">
+    <value>Khoảng giá không hợp lệ: giá không được âm và giá thấp nhất không được lớn hơn giá cao nhất.</value>
+  </data>
+  <data name="DishNotFound" xml:space="preserve">
+    <value>Không tìm thấy món ăn.</value>
+  </data>
+  <data name="CategoryPageNotFound" xml:space="preserve">
+    <value>Không tìm thấy loại món ăn.</value>
+  </data>
+  <data name="ImageNotFound" xml:space="preserve">
+    <value>Không tìm thấy ảnh.</value>
+  </data>
+  <data name="PageNotFound" xml:space="preserve">
+    <value>Trang bạn tìm không tồn tại.</value>
+  </data>
+  <data name="NotFoundTitle" xml:space="preserve">
+    <value>Không tìm thấy</value>
+  </data>
+  <data name="DbError" xml:space="preserve">
+    <value>Đã xảy ra lỗi cơ sở dữ liệu. Vui lòng thử lại.</value>
+  </data>
+  <data name="ErrorTitle" xml:space="preserve">
+    <value>Đã xảy ra lỗi</value>
+  </data>
+  <data name="ErrorMessage" xml:space="preserve">
+    <value>Đã xảy ra lỗi không mong muốn khi xử lý yêu cầu.</value>
+  </data>
+</root>

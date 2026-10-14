@@ -1,0 +1,21 @@
+@model Dish_BIT240049
+@{
+    ViewData["Title"] = L["EditDishTitle"].Value;
+}
+
+<h1 class="h3 mb-3">@L["EditDishTitle"]</h1>
+
+@if (ViewBag.NoCategories == true)
+{
+    <div class="alert alert-warning">
+        @L["NoCategoriesWarning"]
+        <a asp-controller="DishCategories" asp-action="Create">@L["CreateCategory"]</a>
+    </div>
+}
+
+<form asp-action="Edit" asp-route-id="@Model.Id" method="post" style="max-width: 640px">
+    <partial name="_ModelErrors" />
+    <partial name="_DishFields" />
+    <button type="submit" class="btn btn-primary">@L["Save"]</button>
+    <a class="btn btn-secondary" asp-action="Detail" asp-route-id="@Model.Id">@L["Cancel"]</a>
+</form>

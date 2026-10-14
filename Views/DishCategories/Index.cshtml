@@ -1,0 +1,46 @@
+@model List<CategoryListItem>
+@{
+    ViewData["Title"] = L["CategoryList"].Value;
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1 class="h3 mb-0">@L["CategoryList"]</h1>
+    <a class="btn btn-primary" asp-action="Create">@L["CreateCategory"]</a>
+</div>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">@L["NoCategoriesWarning"]</div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-hover align-middle">
+            <thead>
+                <tr>
+                    <th>@L["Name"]</th>
+                    <th>@L["Description"]</th>
+                    <th>@L["DishCount"]</th>
+                    <th>@L["Actions"]</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var c in Model)
+                {
+                    <tr>
+                        <td class="fw-semibold">@c.Name</td>
+                        <td>@c.Description</td>
+                        <td>@c.DishCount</td>
+                        <td class="text-nowrap">
+                            <a class="btn btn-sm btn-outline-secondary" asp-action="Edit" asp-route-id="@c.Id">@L["Edit"]</a>
+                            <form asp-action="Delete" asp-route-id="@c.Id" method="post" class="d-inline"
+                                  data-confirm="@L["ConfirmDelete"]">
+                                <button type="submit" class="btn btn-sm btn-outline-danger">@L["Delete"]</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
